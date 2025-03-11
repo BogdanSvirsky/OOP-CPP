@@ -17,5 +17,3 @@ install(TARGETS libcompressor
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} 
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-
-target_compile_options(libcompressor PRIVATE -Wall -Wextra -Wpedantic -Werror)

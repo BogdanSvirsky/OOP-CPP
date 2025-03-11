@@ -9,6 +9,9 @@ set (CMAKE_EXPORT_COMPILE_COMMANDS YES)
 add_subdirectory(compressor)
 add_subdirectory(libcompressor)
 
+set_property(TARGET compressor PROPERTY CXX_STANDARD 20)
+set_property(TARGET libcompressor PROPERTY CXX_STANDARD 20)
+
 include(GNUInstallDirs)
 
 find_program(CLANG_TIDY "clang-tidy")
@@ -57,4 +60,10 @@ if (DOXYGEN_FOUND)
     )
 else()
     message("Can't find doxygen!")
+endif()
+
+if (MSVC) 
+    add_compile_options(/W4 /WX)
+else()
+    add_compile_options(compressor PRIVATE -Wall -Wextra -Wpedantic -Werror)
 endif()
