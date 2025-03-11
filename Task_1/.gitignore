@@ -1,0 +1,14 @@
+# Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.bin
+
+# Build directories
+/build/
+
+.cache/
+CMakeUserPresets.json
