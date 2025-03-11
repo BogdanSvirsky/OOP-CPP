@@ -5,3 +5,5 @@ find_package(spdlog REQUIRED)
 target_link_libraries(compressor PRIVATE libcompressor spdlog::spdlog)
 
 install(TARGETS compressor RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+
+set_property(TARGET compressor PROPERTY CXX_STANDARD 20)

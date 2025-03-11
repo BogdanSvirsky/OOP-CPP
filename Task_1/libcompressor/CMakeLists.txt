@@ -1,4 +1,8 @@
-add_library(libcompressor src/libcompressor.cpp include/libcompressor/libcompressor.hpp)
+set (SOURCES 
+    src/libcompressor.cpp
+    include/libcompressor/libcompressor.hpp)
+
+add_library(libcompressor ${SOURCES})
 
 find_package(BZip2 REQUIRED)
 find_package(ZLIB REQUIRED)
@@ -7,7 +11,7 @@ find_package(spdlog REQUIRED)
 
 target_link_libraries(libcompressor BZip2::BZip2 ZLIB::ZLIB GTest::GTest spdlog::spdlog)
 
-target_include_directories(libcompressor PUBLIC include/libcompressor)
+target_include_directories(libcompressor PUBLIC include)
 
 add_subdirectory(tests)
 

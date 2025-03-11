@@ -2,7 +2,7 @@ add_executable(libcompressortest libcompressortest.cpp)
 
 target_link_libraries(libcompressortest libcompressor GTest::GTest)
 
-target_include_directories(libcompressortest PRIVATE ../include)
+set_property(TARGET libcompressor PROPERTY CXX_STANDARD 20)
 
 include(GoogleTest)
 gtest_discover_tests(libcompressortest

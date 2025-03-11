@@ -3,7 +3,7 @@
  * @brief Implementation of compressor programm.
  */
 #include "spdlog/spdlog.h"
-#include <libcompressor.hpp>
+#include <libcompressor/libcompressor.hpp>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
   }
 
   for (int i = 0; i < result.size; i++) {
-    printf("%.2hhx ", result.data[i]);
+    printf("%.2hhx", result.data[i]);
   }
   printf("\n");
 

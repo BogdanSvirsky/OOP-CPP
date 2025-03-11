@@ -6,7 +6,7 @@
 #include <cstddef>
 #include <cstdio>
 #include <cstdlib>
-#include <libcompressor.hpp>
+#include <libcompressor/libcompressor.hpp>
 #include <zlib.h>
 
 /**

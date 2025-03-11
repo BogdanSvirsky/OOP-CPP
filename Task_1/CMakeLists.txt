@@ -9,9 +9,6 @@ set (CMAKE_EXPORT_COMPILE_COMMANDS YES)
 add_subdirectory(compressor)
 add_subdirectory(libcompressor)
 
-set_property(TARGET compressor PROPERTY CXX_STANDARD 20)
-set_property(TARGET libcompressor PROPERTY CXX_STANDARD 20)
-
 include(GNUInstallDirs)
 
 find_program(CLANG_TIDY "clang-tidy")
@@ -21,7 +18,6 @@ if (CLANG_TIDY)
         CLANG_TIDY_COMMAND 
         ${CLANG_TIDY}
         --config-file=${CMAKE_SOURCE_DIR}/.clang-tidy
-        -extra-arg=-Wno-unknown-warning-option
     )
     set_target_properties(compressor libcompressor PROPERTIES CXX_CLANG_TIDY "${CLANG_TIDY_COMMAND}")
 else()
@@ -65,5 +61,5 @@ endif()
 if (MSVC) 
     add_compile_options(/W4 /WX)
 else()
-    add_compile_options(compressor PRIVATE -Wall -Wextra -Wpedantic -Werror)
+    add_compile_options(-Wall -Wextra -Wpedantic -Werror)
 endif()

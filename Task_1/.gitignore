@@ -9,3 +9,6 @@
 
 # Build directories
 /build/
+
+.cache/
+CMakeUserPresets.json
